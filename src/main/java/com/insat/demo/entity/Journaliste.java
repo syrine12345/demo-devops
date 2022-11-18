@@ -8,9 +8,11 @@ import java.util.List;
 @Entity
 public class Journaliste implements Serializable {
     @Id
-    @GeneratedValue( strategy = GenerationType.AUTO)
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "birthday")
     private String birthday;
     @OneToMany(mappedBy = "journaliste")
     private List<Personality> personalityList = new ArrayList<>();

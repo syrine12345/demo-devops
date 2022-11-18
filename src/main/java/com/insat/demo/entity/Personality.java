@@ -6,10 +6,13 @@ import java.io.Serializable;
 @Entity
 public class Personality implements Serializable {
     @Id
-    @GeneratedValue( strategy = GenerationType.AUTO)
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name = "firstname")
     private String firstname;
+    @Column(name = "lastname")
     private String lastname;
+    @Column(name = "nation")
     private String nation;
     @ManyToOne
     @JoinColumn(name = "id", nullable = true)

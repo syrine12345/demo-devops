@@ -6,7 +6,8 @@ import java.io.Serializable;
 @Entity
 public class Article implements Serializable {
     @Id
-    @GeneratedValue( strategy = GenerationType.AUTO)
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
+    @Column(name = "content")
     private String content;
     @ManyToOne
     @JoinColumn(name = "id", nullable = true)

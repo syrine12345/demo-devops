@@ -8,8 +8,9 @@ import java.util.List;
 @Entity
 public class Subject implements Serializable {
     @Id
-    @GeneratedValue( strategy = GenerationType.AUTO)
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name = "label")
     private String label;
 
     @OneToMany(mappedBy = "subject")
