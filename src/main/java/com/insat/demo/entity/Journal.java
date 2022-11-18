@@ -1,9 +1,6 @@
 package com.insat.demo.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -12,10 +9,14 @@ public class Journal implements Serializable {
     @GeneratedValue( strategy = GenerationType.AUTO)
     private String name;
     private String address;
+    @ManyToOne
+    @JoinColumn(name = "id", nullable = true)
+    private Journaliste journaliste;
 
-    public Journal(String name, String address) {
+    public Journal(String name, String address, Journaliste journaliste) {
         this.name = name;
         this.address = address;
+        this.journaliste = journaliste;
     }
 
     public Journal(){}
@@ -34,5 +35,13 @@ public class Journal implements Serializable {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Journaliste getJournaliste() {
+        return journaliste;
+    }
+
+    public void setJournaliste(Journaliste journaliste) {
+        this.journaliste = journaliste;
     }
 }

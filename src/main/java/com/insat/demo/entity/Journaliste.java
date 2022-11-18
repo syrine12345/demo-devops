@@ -15,7 +15,7 @@ public class Journaliste implements Serializable {
     @OneToMany(mappedBy = "journaliste")
     private List<Personality> personalityList = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "journaliste")
+    @OneToMany(mappedBy = "journaliste")
     private List<Journal> journalList = new ArrayList<>();
 
     @OneToMany(mappedBy = "journaliste")
