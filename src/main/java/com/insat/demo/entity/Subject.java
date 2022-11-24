@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "subject")
 public class Subject implements Serializable {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
