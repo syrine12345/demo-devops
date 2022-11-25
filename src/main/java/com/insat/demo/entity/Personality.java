@@ -1,8 +1,11 @@
 package com.insat.demo.entity;
 
+import lombok.Builder;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
+@Builder
 @Entity
 public class Personality implements Serializable {
     @Id
@@ -15,22 +18,22 @@ public class Personality implements Serializable {
     @Column(name = "nation")
     private String nation;
     @ManyToOne
-    @JoinColumn(name = "id", nullable = true)
+    @JoinColumn(name = "id_journaliste", nullable = true,insertable = false, updatable = false)
     private Journaliste journaliste;
 
-    public Personality(int id, String firstname, String lastname, String nation, Journaliste journaliste) {
+    public Personality(long id, String firstname, String lastname, String nation, Journaliste journaliste) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.nation = nation;
-        this.journaliste = journaliste;
+        //this.journaliste = journaliste;
     }
 
     public Personality(String firstname, String lastname, String nation, Journaliste journaliste) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.nation = nation;
-        this.journaliste = journaliste;
+        //this.journaliste = journaliste;
     }
 
     public Personality(){}

@@ -23,7 +23,12 @@ public class PersonalityController {
         return personalityList;
     }
 
-
+    @GetMapping("/{id}")
+    public Personality getPersonalityById(@PathVariable("id") Long Id)
+    {
+        Personality personality = this.personalityService.getPersonalityById(Id);
+        return personality;
+    }
     @PostMapping("/create")
     public Personality createNewPersonality(@RequestBody Personality newPersonality)
     {

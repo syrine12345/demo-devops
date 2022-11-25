@@ -8,15 +8,19 @@ import java.io.Serializable;
 public class Journal implements Serializable {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
+    private long id;
     @Column(name = "name")
     private String name;
     @Column(name = "address")
     private String address;
     @ManyToOne
-    @JoinColumn(name = "id", nullable = true)
+    @JoinColumn(name = "id_journaliste", nullable = true,insertable = false, updatable = false)
     private Journaliste journaliste;
 
-    public Journal(String name, String address, Journaliste journaliste) {
+    public Journal(String name, String address,Long id
+            , Journaliste journaliste
+    ) {
+        this.id=id;
         this.name = name;
         this.address = address;
         this.journaliste = journaliste;

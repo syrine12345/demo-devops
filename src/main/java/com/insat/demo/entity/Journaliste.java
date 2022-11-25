@@ -10,7 +10,7 @@ import java.util.List;
 public class Journaliste implements Serializable {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
-    private long id;
+    private long id_journaliste;
     @Column(name = "name")
     private String name;
     @Column(name = "birthday")
@@ -25,7 +25,7 @@ public class Journaliste implements Serializable {
     private List<Article> articleList = new ArrayList<>();
 
     public Journaliste(long id, String name, String birthday, List personalityList, List journalList, List articleList) {
-        this.id = id;
+        this.id_journaliste = id;
         this.name = name;
         this.birthday = birthday;
         this.personalityList = personalityList;
@@ -36,19 +36,19 @@ public class Journaliste implements Serializable {
     public Journaliste(String name, String birthday, List personalityList, List journalList, List articleList) {
         this.name = name;
         this.birthday = birthday;
-        this.personalityList = personalityList;
+       /* this.personalityList = personalityList;
         this.journalList = journalList;
-        this.articleList = articleList;
+        this.articleList = articleList;*/
     }
 
     public Journaliste(){}
 
     public Long getId() {
-        return id;
+        return id_journaliste;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.id_journaliste = id;
     }
 
     public String getName() {

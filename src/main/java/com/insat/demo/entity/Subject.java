@@ -10,15 +10,15 @@ import java.util.List;
 public class Subject implements Serializable {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
-    private long id;
+    private long id_subj;
     @Column(name = "label")
     private String label;
 
     @OneToMany(mappedBy = "subject")
-    private List<Article> articleList = new ArrayList<>();
+    private List<Article> articleList ;
 
     public Subject(long id, String label, List articleList) {
-        this.id = id;
+        this.id_subj = id;
         this.label = label;
         this.articleList = articleList;
     }
@@ -26,11 +26,11 @@ public class Subject implements Serializable {
     public Subject(){}
 
     public long getId() {
-        return id;
+        return id_subj;
     }
 
     public void setId(long id) {
-        this.id = id;
+        this.id_subj = id;
     }
 
     public String getLabel() {
