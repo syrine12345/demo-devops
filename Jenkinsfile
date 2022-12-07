@@ -16,12 +16,6 @@ pipeline {
             }
         }
 
-        stage('Dynamic test') {
-     
-            steps {
-                sh "mvn clean test"
-            }
-        }
 
         stage('Sonar analysis') {
             
