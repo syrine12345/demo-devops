@@ -1,2 +1,2 @@
-/src/test/java/com/insat/demo/JournalRepoTest.java
-/src/test/java/com/insat/demo/PersonalityRepoTest.java
+src/test/java/com/insat/demo/JournalRepoTest.java
+src/test/java/com/insat/demo/PersonalityRepoTest.java
