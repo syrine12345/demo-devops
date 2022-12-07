@@ -58,6 +58,17 @@
             <optional>true</optional>
         </dependency>
     </dependencies>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>${snapshotRepositoryId}</id>
+            <url>${snapshotRepositoryUrl}</url>
+        </snapshotRepository>
+        <repository>
+            <id>${releaseRepositoryId}</id>
+            <url>${releaseRepositoryUrl}</url>
+        </repository>
+    </distributionManagement>
+
 
     <build>
         <plugins>
