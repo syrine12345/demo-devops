@@ -23,7 +23,28 @@ pipeline {
                 bat "mvn test"
             }
         }
+        
+        stage('Integration testing'){
 
+            steps{
+
+                   script{
+
+                         bat "mvn verify -DskipUnitTests"
+                   }
+            }
+        }
+        
+        stage('Maven build'){
+
+            steps{
+                
+                script{
+                     bat "mvn clean install"
+                }
+           
+            }
+        }
 
         
 
