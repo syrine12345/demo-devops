@@ -15,6 +15,13 @@ pipeline {
                 checkout scm
             }
         }
+        
+        stage('JUnit Test') {
+     
+            steps {
+                bat "mvn test"
+            }
+        }
 
 
         stage('Sonar analysis') {
