@@ -57,8 +57,15 @@ pipeline {
             }
         }
 
+        stage('package application') {
 
-        
+              steps {
+                  configFileProvider([configFile(fileId: 'maven-settings', variable: 'MAVEN_SETTINGS')]) {
+                          bat "mvn -X -s $MAVEN_SETTINGS clean deploy"
+                  }
+              }
+        }
+
 
     }
 }        
