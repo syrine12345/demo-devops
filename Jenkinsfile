@@ -27,7 +27,7 @@ pipeline {
         stage('Sonar analysis') {
             
             steps {
-               withSonarQubeEnv(credentialsId: 'jenkins-sonar') {
+               withSonarQubeEnv('sonarqube-1') {
                     
                         bat "mvn clean verify sonar:sonar"
                     
