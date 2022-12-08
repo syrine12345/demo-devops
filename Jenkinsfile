@@ -57,21 +57,6 @@ pipeline {
             }
         }
 
-        stage('Quality gate') {
-             when {
-                expression {
-                    runSonarAnalysis
-                }
-            }
-
-            steps {
-                 timeout(time: 10, unit: 'MINUTES') {
-                     waitForQualityGate abortPipeline: true
-                }
-           }
-        }
-
-
         stage('package application') {
 
               steps {
