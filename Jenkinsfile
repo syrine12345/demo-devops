@@ -20,10 +20,10 @@ pipeline {
         stage('Sonar analysis') {
             
             steps {
-                withSonarQubeEnv('sonarqube-1') {
-                    configFileProvider([configFile(fileId: 'maven-settings', variable: 'MAVEN_SETTINGS')]) {
-                        bat "mvn  -X -s $MAVEN_SETTINGS clean verify sonar:sonar  "
-                    }
+               withSonarQubeEnv(credentialsId: 'jenkins-sonar') {
+                    
+                        bat "mvn clean verify sonar:sonar"
+                    
                 }
             }
         }
