@@ -22,7 +22,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('sonarqube-1') {
                     configFileProvider([configFile(fileId: 'maven-settings', variable: 'MAVEN_SETTINGS')]) {
-                        sh "mvn  -X -s $MAVEN_SETTINGS clean verify sonar:sonar  "
+                        bat "mvn  -X -s $MAVEN_SETTINGS clean verify sonar:sonar  "
                     }
                 }
             }
@@ -33,7 +33,7 @@ pipeline {
      
             steps {
                 configFileProvider([configFile(fileId: 'maven-settings', variable: 'MAVEN_SETTINGS')]) {
-                        sh "mvn -X -s $MAVEN_SETTINGS clean deploy"
+                        bat "mvn -X -s $MAVEN_SETTINGS clean deploy"
                 }
             }
         }
